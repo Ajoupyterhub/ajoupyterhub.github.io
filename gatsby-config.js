@@ -69,7 +69,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
@@ -85,6 +84,7 @@ module.exports = {
         icon: config.icon,
       },
     },
+    `gatsby-plugin-offline`,
     // https://www.gatsbyjs.org/docs/themes/converting-a-starter/#transpiling-your-theme-with-webpack
     {
       resolve: 'gatsby-plugin-compile-es6-packages',
