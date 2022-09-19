@@ -50,7 +50,8 @@ module.exports = {
         {
           label: 'About',
           url: '/about',
-        }, /*
+        }, 
+        /*
         {
           label: 'Installation',
           url: '/how-to-install',
