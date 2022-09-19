@@ -15,7 +15,7 @@ module.exports = {
   background_color: '#ffffff',
   theme_color: '#c62828',
   display: 'standalone',
-  icon: 'content/images/baymax.png',
+  icon: 'content/images/intro_ajou_symbol.png',
   postsPerPage: 6,
   disqusShortname: '', //'maxpou',
   headerTitle: 'Ajoupyterhub',
