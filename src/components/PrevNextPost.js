@@ -97,7 +97,7 @@ const PrevNextPost = props => {
                 <PreviewContent>
                   <header>
                     <h2>
-                      {defaultLang !== language && <Flag language={language} />}
+                      {/* defaultLang !== language && <Flag language={language} />*/}
                       {title}
                     </h2>
                   </header>

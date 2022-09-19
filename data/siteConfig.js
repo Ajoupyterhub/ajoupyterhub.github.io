@@ -1,29 +1,25 @@
 module.exports = {
-  siteTitle: 'gatsby-starter-morning-dew',
-  siteDescription: 'A Gatsby theme/starter to build lightning-fast websites',
-  authorName: 'Maxence Poutord',
-  twitterUsername: '_maxpou',
-  authorAvatar: 'avatar.jpeg', // file in content/images
-  defaultLang: 'en', // show flag if lang is not default. Leave empty to enable flags in post lists
-  authorDescription: `
-  For the last decade, Maxence Poutord has worked with a variety of web technologies. He is currently focused on front-end development.
-  On his day to day job, he is working as a senior front-end engineer at VSware. He is also an occasional tech speaker and a mentor.
-  As a digital nomad, he is living where the WiFi and sun are 😎 <br>
-  Do you want to know more? <a href="https://www.maxpou.fr/about" rel="noopener" target="_blank">Visit my website!</a>
-  `,
-  siteUrl: 'https://maxpou.github.io/',
-  disqusSiteUrl: 'https://www.maxpou.fr/',
+  siteTitle: 'Ajoupyterhub',
+  siteDescription: 'A Blog Posts for the jupyterhub of Ajou University',
+  authorName: 'Ajoupyterhub',
+  twitterUsername: '',
+  authorAvatar: 'intro_ajou_symbol.png', // file in content/images
+  defaultLang: '', // show flag if lang is not default. Leave empty to enable flags in post lists
+  authorDescription: `Ajoupyterhub team`,
+  siteUrl: 'http://ajoupyterhub.ajousw.kr',
+  disqusSiteUrl: '',
+  utterSiteUrl : 'ajoupyterhub/blog',
   // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
-  pathPrefix: '/gatsby-starter-morning-dew', // Note: it must *not* have a trailing slash.
-  siteCover: 'cover-baymax.jpeg', // file in content/images
+  pathPrefix: '/', // Note: it must *not* have a trailing slash.
+  siteCover: 'red-lighthouse-6011477_1280.jpg', // file in content/images
   background_color: '#ffffff',
-  theme_color: '#222222',
+  theme_color: '#c62828',
   display: 'standalone',
   icon: 'content/images/baymax.png',
   postsPerPage: 6,
-  disqusShortname: 'maxpou',
-  headerTitle: 'gatsby-starter-morning-dew',
-  headerLinksIcon: 'baymax.png', //  (leave empty to disable: '')
+  disqusShortname: '', //'maxpou',
+  headerTitle: 'Ajoupyterhub',
+  headerLinksIcon: 'intro_ajou_symbol.png', //  (leave empty to disable: '')
   headerLinks: [
     {
       label: 'Blog',
@@ -31,12 +27,12 @@ module.exports = {
     },
     {
       label: 'About',
-      url: '/about-gatsby-starter-morning-dew',
-    },
+      url: '/about',
+    }, /*
     {
       label: 'Installation',
       url: '/how-to-install',
-    },
+    },*/
   ],
   // Footer information (ex: Github, Netlify...)
   websiteHost: {
@@ -53,32 +49,35 @@ module.exports = {
         },
         {
           label: 'About',
-          url: '/about-gatsby-starter-morning-dew',
-        },
+          url: '/about',
+        }, /*
         {
           label: 'Installation',
           url: '/how-to-install',
-        },
+        }, */
       ],
     },
     {
-      sectionName: 'Follow the author',
+      sectionName: '둘러보기',
       links: [
         {
-          label: 'GitHub',
-          url: 'https://github.com/maxpou/gatsby-starter-morning-dew',
+          label: 'Ajoupyterhub',
+          url: 'https://jupyter.ajou.ac.kr',
           rel: 'external',
         },
+        
         {
-          label: 'Website',
+          label: 'Blog Theme 제공하신 분',
           url: 'https://www.maxpou.fr',
           rel: 'external',
-        },
+        }, 
+        /*
         {
-          label: 'Twitter',
-          url: 'https://twitter.com/_maxpou',
+          label: 'Blog Theme URL',
+          url: 'https://www.gatsbyjs.com/plugins/gatsby-starter-morning-dew/',
           rel: 'external',
-        },
+        },*/
+        
       ],
     },
   ],
