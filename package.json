@@ -23,6 +23,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy" : "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write 'src/**/*.js' 'data/siteConfig.js' 'gatsby-*.js' 'scripts/*.js'",
     "generatePostPreviewImages": "./scripts/generatePostPreviewImages.js",
     "lh": "lighthousebot",
@@ -66,6 +67,7 @@
     "terser": "^4.6.11"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "lighthousebot": "https://github.com/GoogleChromeLabs/lighthousebot",
     "prettier": "^2.2.1",
     "puppeteer": "^5.4.1",
