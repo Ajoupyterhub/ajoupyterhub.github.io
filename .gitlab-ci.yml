@@ -1,0 +1,44 @@
+image: node:16
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - public
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+
+test:
+  stage: build
+  script:
+    - npm install
+    - npm test
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+
+pages:
+  image: alpine:latest
+  stage: deploy
+  script:
+    - echo "GitLab Pages magic happens here"
+  dependencies:
+    - build # Pulls in the artifacts from the build stage
+  artifacts:
+    paths:
+      - public # Required artifact of Gitlab pages
+  only:
+    - main
+  tags:
+    - pages
+
+
