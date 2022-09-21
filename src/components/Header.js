@@ -71,6 +71,7 @@ const HeaderLinkTitle = styled(HeaderLink)`
 const HeaderLinkTitleContent = styled.span`
   display: block;
   padding-left: 0;
+  font-size: 1.5em;
 `
 
 const HeaderImage = styled.img`
