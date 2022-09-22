@@ -42,7 +42,7 @@ const FooterWrapper = styled.footer`
   }
 
   .footer-title {
-    font-size: 0.83em;
+    font-size: 1.2rem;
     margin: 0 0 1rem;
   }
 
