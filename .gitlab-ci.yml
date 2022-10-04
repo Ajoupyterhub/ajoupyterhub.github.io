@@ -16,16 +16,6 @@ build:
     paths:
       - node_modules/
 
-test:
-  stage: build
-  script:
-    - npm install 
-    - npm test
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - node_modules/
-
 pages:
   image: alpine:latest
   stage: deploy
