@@ -19,7 +19,7 @@ build:
 test:
   stage: build
   script:
-    - npm install
+    - npm install --force
     - npm test
   cache:
     key: ${CI_COMMIT_REF_SLUG}
