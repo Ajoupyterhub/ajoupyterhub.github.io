@@ -23,9 +23,9 @@ const ReadPost = styled(Link)`
   color: var(--color-text);
 
   &:hover {
-    background-color: var(--color-grey600);
+    background-color: var(--color-beige);
     border-radius: 0.25rem;
-    color: var(--color-white);
+    color: var(--color-darkBlue);
   }
 `
 
