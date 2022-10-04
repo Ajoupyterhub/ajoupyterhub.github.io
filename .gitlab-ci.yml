@@ -7,7 +7,7 @@ build:
   stage: build
   script:
     - npm install
-    - npm run build
+    - npm run build 
   artifacts:
     paths:
       - public
@@ -19,7 +19,7 @@ build:
 test:
   stage: build
   script:
-    - npm install --force
+    - npm install 
     - npm test
   cache:
     key: ${CI_COMMIT_REF_SLUG}
