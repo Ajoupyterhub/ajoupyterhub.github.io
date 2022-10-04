@@ -23,7 +23,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy" : "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write 'src/**/*.js' 'data/siteConfig.js' 'gatsby-*.js' 'scripts/*.js'",
     "generatePostPreviewImages": "./scripts/generatePostPreviewImages.js",
     "lh": "lighthousebot",
@@ -48,6 +48,7 @@
     "gatsby-plugin-page-creator": "^3.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
+    "gatsby-plugin-sitemap": "^5.23.1",
     "gatsby-plugin-styled-components": "^4.0.0",
     "gatsby-remark-autolink-headers": "^3.0.0",
     "gatsby-remark-copy-linked-files": "^3.0.0",
