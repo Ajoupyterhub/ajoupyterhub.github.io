@@ -6,6 +6,9 @@ tags: [공지]
 slug: "vscode-cpptools-extension-installation_221004"
 excerpt: VSCode 공식 C/C++ Debugging Extension 설치 방법을 안내합니다.
 ---
+위 사진은 <a href="https://pixabay.com/ko//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6599950">Pixabay</a>로부터 입수된 <a href="https://pixabay.com/ko/users/derks24-5892478/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6599950">Alfred Derks</a>님의 이미지 입니다.
+
+<br/>
 
 #### Code-Server에 C/C++ Debugging Extension을 설치하는 방법
 
