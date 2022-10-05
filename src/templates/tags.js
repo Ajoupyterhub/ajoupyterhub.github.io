@@ -9,7 +9,9 @@ import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 
 const PageTitle = styled.h1`
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(214, 209, 230, 0.5);
 `
 
 class Tags extends React.Component {
@@ -23,7 +25,7 @@ class Tags extends React.Component {
         <Hero title={pageTitle} />
 
         <Wrapper>
-          <PageTitle>Posts tagged as {this.props.pageContext.tag}</PageTitle>
+          <PageTitle>[#{this.props.pageContext.tag}] 글모음 </PageTitle>
           <PostsList posts={posts} />
         </Wrapper>
       </Layout>
