@@ -27,9 +27,10 @@ Jupyter Notebook에는 현재 2가지 DataScience Notebook과 Tensorflow Noteboo
 
 그럼에도 불구하고, VSCode로 Python Coding을 하고 싶다면, 여러분이 사용할 Python Module들을 스스로 설치해야 합니다.
 
-그러나, 여러분에게는 Python Module을 설치할 권한이 없습니다. 보안 위험을 줄이기 위해서 권한을 제한하였습니다.
+그러나, 여러분에게는 보안 위험을 줄이기 위해서 `sudo` 권한을 부여하지 않았기 때문에, Python Module을 설치하기 위해 
+단순히 `pip install` 명령을 사용하는 것이 아니라, 조금 다른 방법을 사용해야 합니다.
 
-하지만, Python Coding 할 때  좋은 습관 중의 하나인 `Virtual Environment`를 활용하면, Python Module들을 자유롭게 설치하여 활용할 수 있습니다. 대신, 설치된 모듈은 여러분의 `home` 디렉토리에 설치됩니다.
+Python Coding 할 때  좋은 습관 중의 하나인 `Virtual Environment`를 활용하면, Python Module들을 자유롭게 설치하여 활용할 수 있습니다. 대신, 설치된 모듈은 여러분의 `home` 디렉토리에 설치됩니다.
 
 <br/>
 

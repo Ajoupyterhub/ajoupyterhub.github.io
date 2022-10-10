@@ -11,7 +11,7 @@ module.exports = {
   utterSiteUrl : 'ajoupyterhub/blog',
   // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
   pathPrefix: '/', // Note: it must *not* have a trailing slash.
-  siteCover: 'red-lighthouse-6011477_1280.jpg', // file in content/images
+  siteCover: 'hd-wallpaper-g0ee48a622_1920.jpg', // file in content/images
   background_color: '#ffffff',
   theme_color: '#c62828',
   display: 'standalone',
