@@ -45,7 +45,7 @@ app.get('/', (req, resp) => {
 })
 
 app.get('/Hello', (req, resp) => {
-    resp.send("World unser /Hello")
+    resp.send("World under /Hello")
 })
 
 app.listen(8100, () => {
