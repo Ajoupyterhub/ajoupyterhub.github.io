@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-list-template-js",
+    "path": "/pages/2",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Ajoupyterhub","description":"A Blog Posts for the jupyterhub of Ajou University"}},"posts":{"edges":[{"node":{"excerpt":"전세계 Data Scientist들이 사용하는 Jupyter Notebook을 Web에서 사용해보세요.","timeToRead":1,"frontmatter":{"title":"간단 사용 가이드","tags":["공지","사용가이드"],"language":null,"slug":"user-guide-ajoupyterhub"}}}]}},"pageContext":{"limit":6,"skip":6,"currentPage":2,"nbPages":2}},
+    "staticQueryHashes": ["1710966093","1956263691"]}
