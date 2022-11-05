@@ -57,7 +57,7 @@ app.listen(8100, () => {
 
 터미널을 오픈하고, Commandline Prompt에서
 
-``` 
+``` bash
 $ node app.js
 ```
 

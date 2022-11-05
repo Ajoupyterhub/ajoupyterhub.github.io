@@ -39,23 +39,22 @@ Python Coding 할 때  좋은 습관 중의 하나인 `Virtual Environment`를 �
 
  2. 그리고 다음의 커맨드로 `test_venv` 라는 Python Virtual Environment를 생성하고 활용을 시작합니다. 가상 환경의 이름은 `test_venv` 대신 여러분이 정할 수 있습니다.
 
-
-```
-$ python3 -m venv test_venv 
-$ source test_venv/bin/activate
-```
+    ``` bash
+    $ python3 -m venv test_venv 
+    $ source test_venv/bin/activate
+    ```
 
  3. 성공적으로 Python Virtual Environment가 설치되었다면, Command Prompt가 아래처럼 바뀌었을 겁니다. 여러분이 가상환경에 들어와 있다는 것을 표시하는 것입니다.
 
  4. 이 환경에서 모듈을 설치하면, 여러분의 home 디렉토리 안의 가상환경 디렉토리에 설치됩니다.
 
-```
-...
-(test_venv)$
+    ``` bash
+    ...
+    (test_venv)$
 
-(test_venv)$ pip install your_wanted_module
+    (test_venv)$ pip install your_wanted_module
 
-```
+    ```
 
 <br/>
 
