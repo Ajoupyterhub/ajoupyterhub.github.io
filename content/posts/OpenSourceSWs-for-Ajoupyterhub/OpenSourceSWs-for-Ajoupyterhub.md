@@ -4,7 +4,7 @@ date: 2022-10-05
 cover: ../../images/desola-lanre-ologun-vII7qKAk-9A-unsplash.jpg
 tags: ["기술"]
 slug: "open-source-sw-for-ajoupyterhub_221005"
-excerpt: Ajoupyterhub에 사용된 open SOurce SW들을 소개합니다.
+excerpt: Ajoupyterhub에 사용된 Open Source SW들을 소개합니다.
 ---
 
 The above photo by <a href="https://unsplash.com/@disruptxn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Desola Lanre-Ologun</a> on <a href="https://unsplash.com/s/photos/software?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

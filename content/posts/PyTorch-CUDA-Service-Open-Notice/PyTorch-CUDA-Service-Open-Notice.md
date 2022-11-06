@@ -12,9 +12,9 @@ excerpt: GPU 사용을 위한 PyTorch Notebook과 TorchTerm 컨테이너 서비�
 Ajoupyterhub Cluster에는 모두 12개의 GPU 카드 (NVIDIA RTX Series)가 설치되어 있습니다.
 
 인공지능, 머신러닝 등의 SW를 개발하기 위해서는 계산량이 많은 작업들이 실행되는데, GPU 카드를 활용하면, 
-계산에 필요한 시간을 효과적으로 줄일 수 있다고 알려져 있습니다.
+계산에 필요한 시간을 효과적으로 줄일 수 있습니다.
 
-전체 클러스터에 12개만 제공되기 때문에 모든 학생이 사용할 수는 없습니다. 
+그러나, 아쉽게도 전체 클러스터에 12개만 제공되기 때문에 모든 학생이 사용할 수는 없습니다. 
 
 그래서, 지금은 일부 교과목을 수강하는 학생에게만, GPU 카드를 사용 할 수 있도록 허용했습니다.
 
@@ -61,7 +61,8 @@ torch.cuda.is_available()
 
  2. `SSH Key`
     - `PyTorch Web Terminal` (formerly, `PyTorch installed Web TTY Terminal`)의 보안을 위하여, `password` 방식의 SSH 접속을 허용하지 않습니다. `SSH Key` 만들고, 공개키에 해당하는 `key`파일 (통상 `id_rsa.pub`)을 컨테이너의 `~/.ssh/authorized_keys` 파일에 추가해야 합니다.
-    - 뿐만 아니라, 다음 `SSH Key`도 authoried_keys 파일에 함께 있어야 합니다. (미리 설치해 두었지만, 확인이 필요합니다)
+    - `SSH Key`는 각 OS의 Terminal에서 `ssh-keygen` 명령으로 생성합니다. Windows의 경우, `git bash` 설치해야 할 수도 있습니다.
+    - 생성된 `SSH Key` 이외에도, 다음 `SSH Key`도 authoried_keys 파일에 함께 있어야 합니다. (미리 설치해 두었지만, 확인이 필요합니다)
 
     ``` bash
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDQ2ynqxrD1LmaagO3kh30Pl8iV6alE6VL/B0oo/T8tmi/xbVtkCrsPeS7C+NYc1fAkxgngho41Vx0fl+wPYEl4HJKznOFXx6WBwVfdXga90gnGGnv8VAgvBTgf/oLgYyB92jLCcZveA7Jo4p5yJHmcEssx+w+shIpjeGSq7ePAiw==
