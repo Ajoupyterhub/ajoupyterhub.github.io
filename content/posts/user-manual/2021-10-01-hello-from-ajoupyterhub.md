@@ -1,6 +1,6 @@
 ---
-title: "간단 사용 가이드"
-date: 2021-10-03
+title: 간단 사용 가이드
+date:  2021-10-03
 cover: "lake-7443622_1280.jpg" 
 #    publicURL : "https://cdn.pixabay.com/photo/2022/09/09/18/47/lake-7443622_1280.jpg" # "./cover.jpg"
 categories: 

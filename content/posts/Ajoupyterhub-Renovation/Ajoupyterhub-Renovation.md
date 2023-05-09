@@ -1,6 +1,6 @@
 ---
-title: "Ajoupyterhub가 새롭게 꾸며졌습니다."
-date: 2023-05-09
+title: Ajoupyterhub가 새롭게 꾸며졌습니다.
+date:  2023-05-09
 cover: "./door-ge03f96ccb_1920.jpg" 
 categories: 
     - 공지

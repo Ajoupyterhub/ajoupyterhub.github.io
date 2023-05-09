@@ -1,6 +1,6 @@
 ---
 title: Ajoupyterhub에 사용된 OpenSource SW들
-date: 2022-10-05
+date:  2022-10-05
 cover: ../../images/desola-lanre-ologun-vII7qKAk-9A-unsplash.jpg
 tags: ["기술"]
 slug: "open-source-sw-for-ajoupyterhub_221005"
