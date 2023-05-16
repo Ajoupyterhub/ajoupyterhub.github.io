@@ -60,7 +60,7 @@ torch.cuda.is_available()
 
 
  2. `SSH Key`
-    - `PyTorch Web Terminal` (formerly, `PyTorch installed Web TTY Terminal`)의 보안을 위하여, `password` 방식의 SSH 접속을 허용하지 않습니다. `SSH Key` 만들고, 공개키에 해당하는 `key`파일 (통상 `id_rsa.pub`)을 컨테이너의 `~/.ssh/authorized_keys` 파일에 추가해야 합니다.
+    - `PyTorch Web Terminal` (formerly, `PyTorch installed Web TTY Terminal`)의 보안을 위하여, `password` 방식의 SSH 접속을 허용하지 않습니다. `SSH Key` 만들고, 공개키에 해당하는 `key`파일(통상 `id_rsa.pub`)의 내용을 복사해서 컨테이너의 `~/.ssh/authorized_keys` 파일에 추가해야 합니다.
     - `SSH Key`는 각 OS의 Terminal에서 `ssh-keygen` 명령으로 생성합니다. Windows의 경우, `git bash` 설치해야 할 수도 있습니다.
     - 생성된 `SSH Key` 이외에도, 다음 `SSH Key`도 authoried_keys 파일에 함께 있어야 합니다. (미리 설치해 두었지만, 확인이 필요합니다)
 
