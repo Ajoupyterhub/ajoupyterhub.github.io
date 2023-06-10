@@ -64,9 +64,9 @@ torch.cuda.is_available()
     - `SSH Key`는 각 OS의 Terminal에서 `ssh-keygen` 명령으로 생성합니다. Windows의 경우, `git bash` 설치해야 할 수도 있습니다.
     - 생성된 `SSH Key` 이외에도, 다음 `SSH Key`도 authoried_keys 파일에 함께 있어야 합니다. (미리 설치해 두었지만, 확인이 필요합니다)
 
-    ``` bash
+    <!-- ```
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDQ2ynqxrD1LmaagO3kh30Pl8iV6alE6VL/B0oo/T8tmi/xbVtkCrsPeS7C+NYc1fAkxgngho41Vx0fl+wPYEl4HJKznOFXx6WBwVfdXga90gnGGnv8VAgvBTgf/oLgYyB92jLCcZveA7Jo4p5yJHmcEssx+w+shIpjeGSq7ePAiw==
-    ```
+    ``` -->
 
 
  3. 컨테이너 실행 후, 접속 확인
@@ -86,3 +86,4 @@ torch.cuda.is_available()
 대략적으로 이런 절차에 의해 `VS Code` 원격 개발환경을 사용할 수 있습니다.
 
 질문은 `mobilechoi@ajou.ac.kr` 로 해주시기 바랍니다.
+
