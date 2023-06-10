@@ -1,5 +1,6 @@
 const path = require('path')
 const config = require('./data/siteConfig')
+const remarkGfm = require('remark-gfm')
 
 module.exports = {
   siteMetadata: {
@@ -9,41 +10,57 @@ module.exports = {
     ...config,
   },
   pathPrefix: config.pathPrefix,
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'posts',
-        path: 'content/posts',
+        name: 'blog',
+        path: `${__dirname}/content/blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'pages',
-        path: 'content/pages',
+        path: `${__dirname}/content/pages`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'images',
-        path: 'content/images',
+        path: `${__dirname}/content/images`,
       },
     },
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: path.join(__dirname, `src`, `pages`),
+        path: `${__dirname}/src/pages`,
       },
     },
+
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`],
-        defaultLayouts: {
-          default: require.resolve('./src/templates/page.js'),
+        extensions: [`.md`, `.mdx`],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+          //remarkPlugins: [
+          // Add GitHub Flavored Markdown (GFM) support
+          //import(`remark-gfm`),
+          //  require(`remark-gfm`),
+
+          // To pass options, use a 2-element array with the
+          // configuration in an object in the second element
+          //[import(`remark-external-links`), { target: false }],
+          //]
         },
+        //defaultLayouts: {
+        //   default: require.resolve('./src/templates/page.js'),
+        //},
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
@@ -61,6 +78,7 @@ module.exports = {
         ],
       },
     },
+
     // Reminder (https://github.com/gatsbyjs/gatsby/issues/15486#issuecomment-509405867)
     {
       resolve: `gatsby-transformer-remark`,
@@ -73,7 +91,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
-    {
+    /* {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
@@ -85,13 +103,13 @@ module.exports = {
         icon: config.icon,
       },
     },
-    `gatsby-plugin-offline`,
+    //`gatsby-plugin-offline`,
     // https://www.gatsbyjs.org/docs/themes/converting-a-starter/#transpiling-your-theme-with-webpack
-    {
+     {
       resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
         modules: ['gatsby-starter-morning-dew'],
       },
-    },
+    },*/
   ],
 }

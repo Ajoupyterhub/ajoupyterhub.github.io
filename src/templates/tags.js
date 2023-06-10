@@ -14,31 +14,63 @@ const PageTitle = styled.h1`
   border-bottom: 1px solid rgba(214, 209, 230, 0.5);
 `
 
-class Tags extends React.Component {
-  render() {
-    const pageTitle = `#${this.props.pageContext.tag}`
-    const posts = this.props.data.posts.edges
+const Tags = ({ pageContext, data, location }) => {
+  const pageTitle = `#${pageContext.tag}`
+  const posts = data.posts.edges
 
-    return (
-      <Layout location={this.props.location}>
-        <SEO title={`Top blog posts on ${this.props.pageContext.tag}`} />
-        <Hero title={pageTitle} />
+  return (
+    <Layout location={location}>
+      <SEO title={`Top blog posts on ${pageContext.tag}`} />
+      <Hero title={pageTitle} />
 
-        <Wrapper>
-          <PageTitle>[#{this.props.pageContext.tag}] 글모음 </PageTitle>
-          <PostsList posts={posts} />
-        </Wrapper>
-      </Layout>
-    )
-  }
+      <Wrapper role="main" id="main-content">
+        <PageTitle>[#{pageContext.tag}] 글모음 </PageTitle>
+        <PostsList posts={posts} />
+      </Wrapper>
+    </Layout>
+  )
 }
 
 export default Tags
 
 export const pageQuery = graphql`
+  query PostsByTag($tag: [String]!) {
+    posts: allMdx(
+      sort: { frontmatter: { date: DESC } }
+      filter: {
+        frontmatter: {
+          tags: { in: $tag }
+          published: { ne: false }
+          unlisted: { ne: true }
+        }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            tags
+            language
+            slug
+            excerpt
+          }
+          fields {
+            timeToRead {
+              text
+            }
+          }
+        }
+      }
+    }
+  }
+`
+/*
+export const pageQuery = graphql`
   query PostsByTag($tag: String!) {
     posts: allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter : { date : DESC }}
       filter: {
         frontmatter: {
           tags: { eq: $tag }
@@ -49,17 +81,22 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
-          timeToRead
+          fields {
+            timeToRead {
+              text
+            }
+          }
           frontmatter {
             title
             date
             tags
             language
             slug
+            excerpt
           }
         }
       }
     }
   }
 `
+*/

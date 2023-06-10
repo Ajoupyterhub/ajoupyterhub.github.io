@@ -1,8 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 import ContentHeader from './ContentHeader'
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
+//import "prismjs/themes/prism-coy.css";
+//import "prismjs/themes/prism-dark.css";
+//import "prismjs/themes/prism-funky.css";
+//import "prismjs/themes/prism-okaidia.css";
+//import "prismjs/themes/prism-solarizedlight.css";
+//import "prismjs/themes/prism-tomorrow.css";
+//import "prismjs/themes/prism-twilight.css";
+//import "../prism-themes/prism-atom-dark.css";
+import '../prism-themes/prism-vsc-dark-plus.css'
+
+/*
+<style>
+    code[class="lang-python"] {
+        font-size: 0.5rem !important;
+    }
+  </style>
+*/
 const ContentBody = styled.div`
   line-height: 1.6;
 
@@ -122,9 +138,13 @@ const ContentBody = styled.div`
   & p > code.language-text,
   & li > code.language-text,
   & em > code.language-text,
-  & strong > code.language-text {
-    background: var(--color-beige);
-    color: #222222cc;
+  & strong > code.language-text,
+  & span > code.language-text {
+    font-family: 'Roboto Mono' !important;
+    /* "Lucida Sans Typewriter", "Lucida Console", Consolas, Monaco, monospace */
+    background: var(--color-wrapperBackground); /* var(--color-beige); */
+    /* color: #222222cc; */
+    color: var(--color-text);
     padding: 0 3px;
     font-size: 0.94em;
     border-radius: 0.3rem;
@@ -136,6 +156,7 @@ const ContentBody = styled.div`
   }
 
   & table {
+    margin: auto;
     margin-top: 1em;
     margin-bottom: 1em;
     border-collapse: collapse;
@@ -155,22 +176,14 @@ const ContentBody = styled.div`
   }
 `
 
-class Content extends React.Component {
-  render() {
-    const { content, date, tags, translations } = this.props
+const Content = ({ content, date, tags }) => {
+  return (
+    <section>
+      {(tags || date) && <ContentHeader date={date} tags={tags} />}
 
-    return (
-      <section>
-        {(tags || date || translations) && (
-          <ContentHeader date={date} tags={tags} translations={translations} />
-        )}
-
-        <ContentBody>
-          <MDXRenderer>{content}</MDXRenderer>
-        </ContentBody>
-      </section>
-    )
-  }
+      <ContentBody>{content}</ContentBody>
+    </section>
+  )
 }
 
 export default Content

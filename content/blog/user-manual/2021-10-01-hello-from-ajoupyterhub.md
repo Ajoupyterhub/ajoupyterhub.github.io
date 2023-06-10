@@ -13,13 +13,13 @@ excerpt: 전세계 Data Scientist들이 사용하는 Jupyter Notebook을 Web에�
 ---
 
 ### 1. [http://jupyter.ajou.ac.kr](http://jupyter.ajou.ac.kr) 로 접속합니다.
-<img src="./images/ajoupyter_home_1.png" width="600"/>
+![](./images/ajoupyter_home_1.png)
 
 <br/>
 <br/>
 
 ### 2. 아주대학교 이메일 아이디로 구글 로그인 합니다.
-<img src="./images/Google_login.png" width="400"/>
+![](./images/Google_login.png)
 
 <br/>
 <br/>
@@ -40,5 +40,5 @@ excerpt: 전세계 Data Scientist들이 사용하는 Jupyter Notebook을 Web에�
 <br/>
 
 ### 5. 새 창에 Jupyter Notebook이 새로 열린 것을 확인하고, Notebook을 사용합니다.
-<img src="./images/Jupyter_Notebook.png" width="600"/>
+![](./images/Jupyter_Notebook.png)
 

@@ -11,10 +11,10 @@ const PostsList = ({ posts }) => {
       {posts.map(post => {
         const props = {
           title: post.node.frontmatter.title,
-          excerpt: post.node.excerpt,
-          date : post.node.frontmatter.date,
+          excerpt: post.node.frontmatter.excerpt,
+          date: post.node.frontmatter.date,
           slug: post.node.frontmatter.slug,
-          timeToRead: post.node.timeToRead,
+          timeToRead: post.node.fields.timeToRead.text,
           language: post.node.frontmatter.language || defaultLang,
           tags: post.node.frontmatter.tags || [],
         }

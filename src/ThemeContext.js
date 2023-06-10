@@ -7,9 +7,14 @@ import {
 } from './tokens/colors'
 
 export const ThemeContext = React.createContext()
+/*{
+  colorMode : 'light',
+  setColorMode : () => {} 
+});*/
 
 export const ThemeProvider = ({ children }) => {
   const [colorMode, rawSetColorMode] = React.useState(undefined)
+  //const [colorMode, rawSetColorMode] = React.useState('light')
 
   React.useEffect(() => {
     const root = window.document.documentElement

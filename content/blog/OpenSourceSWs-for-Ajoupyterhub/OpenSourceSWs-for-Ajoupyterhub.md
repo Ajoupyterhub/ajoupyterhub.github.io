@@ -16,7 +16,7 @@ The above photo by <a href="https://unsplash.com/@disruptxn?utm_source=unsplash&
 
 
 |    | Open Source SW | Url | 
-|---|---|---|
+| --- | --- | --- |
 | SW Infrastructure   | microK8s  | https://microk8s.io/  | 
 |                     | docker    | https://www.docker.com/  |
 | SW Infra Client Library |  python kubernetes client      |  https://github.com/kubernetes-client/python |
@@ -31,6 +31,6 @@ The above photo by <a href="https://unsplash.com/@disruptxn?utm_source=unsplash&
 |                     | React-OAuth/Google| https://www.npmjs.com/package/@react-oauth/google |
 | Database            | mongoDB   | https://www.mongodb.com/ |
 | Coding Practice Tools | Jupyter Notebooks docker images| https://jupyter.org |
-|                     | VS Code Code-server docker images | https://docs.linuxserver.io/images/docker-code-server|
+|                     | VS Code Code-server docker images | https://docs.linuxserver.io/images/docker-code-server |
 
 

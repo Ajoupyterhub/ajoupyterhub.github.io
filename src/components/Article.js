@@ -20,15 +20,15 @@ const ArticleFooter = styled.footer`
 
 class Article extends React.Component {
   render() {
-    const { post } = this.props
+    const { post, body } = this.props
 
     return (
       <ArticleWrapper>
         <Content
-          content={post.body}
+          content={body}
           date={post.frontmatter.date}
           tags={post.frontmatter.tags}
-          translations={post.frontmatter.translations}
+          /* translations={post.frontmatter.translations}*/
         />
         <ArticleFooter>
           <Bio />

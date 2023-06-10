@@ -8,10 +8,10 @@ module.exports = {
   authorDescription: `Ajoupyterhub team`,
   siteUrl: 'http://ajoupyterhub.ajousw.kr',
   disqusSiteUrl: '',
-  utterSiteUrl : 'ajoupyterhub/blog',
+  utterSiteUrl: 'ajoupyterhub/blog',
   // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
   pathPrefix: '/', // Note: it must *not* have a trailing slash.
-  siteCover: 'hd-wallpaper-g0ee48a622_1920.jpg', // file in content/images
+  siteCover: 'background.png', //'hd-wallpaper-g0ee48a622_1920.jpg', // file in content/images
   background_color: '#ffffff',
   theme_color: '#c62828',
   display: 'standalone',
@@ -28,11 +28,11 @@ module.exports = {
     {
       label: 'About',
       url: '/about',
-    }, /*
+    } /*
     {
       label: 'Installation',
       url: '/how-to-install',
-    },*/
+    },*/,
   ],
   // Footer information (ex: Github, Netlify...)
   websiteHost: {
@@ -50,7 +50,7 @@ module.exports = {
         {
           label: 'About',
           url: '/about',
-        }, 
+        },
         /*
         {
           label: 'Installation',
@@ -66,19 +66,18 @@ module.exports = {
           url: 'https://jupyter.ajou.ac.kr',
           rel: 'external',
         },
-        
+
         {
           label: 'Blog Theme 제공하신 분',
           url: 'https://www.maxpou.fr',
           rel: 'external',
-        }, 
+        },
         /*
         {
           label: 'Blog Theme URL',
           url: 'https://www.gatsbyjs.com/plugins/gatsby-starter-morning-dew/',
           rel: 'external',
         },*/
-        
       ],
     },
   ],

@@ -224,12 +224,8 @@ const MobileHeader = ({ headerLinks }) => {
 }
 
 const Header = () => {
-  const {
-    headerLinks,
-    siteTitle,
-    headerTitle,
-    headerLinksIcon,
-  } = useSiteMetadata()
+  const { headerLinks, siteTitle, headerTitle, headerLinksIcon } =
+    useSiteMetadata()
   const iconSrc = headerLinksIcon
     ? useSiteImages(headerLinksIcon).fluid.src
     : null

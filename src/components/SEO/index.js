@@ -24,9 +24,9 @@ const SEO = props => {
   const imagePath = props.imageShare || props.cover || withPrefix(siteCover)
   const image = `${formatedSiteUrl}${imagePath}`
   const description = props.description || siteDescription
-  const internalTranslations = (props.translations || []).filter(
-    t => !t.link.startsWith('http')
-  )
+  // const internalTranslations = (props.translations || []).filter(
+  //   t => !t.link.startsWith('http')
+  // )
   const url = formatedSiteUrl + withPrefix(path)
 
   return (
@@ -38,6 +38,7 @@ const SEO = props => {
         <link rel="canonical" href={url} />
 
         {/* Each language version must list itself + all other language versions */}
+        {/*
         {internalTranslations.length > 0 && (
           <link
             rel="alternate"
@@ -53,6 +54,7 @@ const SEO = props => {
             href={formatedSiteUrl + withPrefix(translation.link)}
           />
         ))}
+        */}
 
         {/* OpenGraph tags */}
         <meta property="og:url" content={url} />
@@ -68,6 +70,7 @@ const SEO = props => {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
       </Helmet>
+      {/*
       <SchemaOrg
         isBlogPost={isBlogPost}
         url={url}
@@ -79,7 +82,7 @@ const SEO = props => {
         author={authorName}
         organization={siteTitle}
         defaultTitle={title}
-      />
+      />*/}
     </>
   )
 }

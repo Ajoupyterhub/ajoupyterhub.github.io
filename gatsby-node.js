@@ -1,4 +1,5 @@
 const { createFilePath } = require('gatsby-source-filesystem')
+const readingTime = require('reading-time')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -16,13 +17,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const allMarkdownQuery = await graphql(`
     {
       allMarkdown: allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { frontmatter: { date: DESC } }
         filter: { frontmatter: { published: { ne: false } } }
         limit: 1000
       ) {
         edges {
           node {
-            fileAbsolutePath
+            id
             frontmatter {
               title
               date
@@ -32,11 +33,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               cover {
                 publicURL
               }
+              excerpt
               unlisted
             }
-            timeToRead
-            excerpt
+            internal {
+              contentFilePath
+            }
+            fields {
+              timeToRead {
+                text
+              }
+            }
           }
+        }
+      }
+    }
+  `)
+  const tagsGroupQuery = await graphql(`
+    {
+      tagsGroup: allMdx(limit: 2000) {
+        group(field: { frontmatter: { tags: SELECT } }) {
+          fieldValue
         }
       }
     }
@@ -59,8 +76,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const markdownFiles = allMarkdownQuery.data.allMarkdown.edges
 
   const posts = markdownFiles.filter(item =>
-    item.node.fileAbsolutePath.includes('/content/posts/')
+    //item.node.fileAbsolutePath.includes('/content/posts/')
+    item.node.internal.contentFilePath.includes('/content/blog/')
   )
+
+  console.log('Posts start')
+  posts.forEach(p => {
+    // console.log(p.node?.frontmatter);
+    // console.log(p.node?.frontmatter?.excerpt)
+  })
+  console.log('Posts end')
 
   const listedPosts = posts.filter(
     item => item.node.frontmatter.unlisted !== true
@@ -90,57 +115,72 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: post.node.frontmatter.slug,
-      component: BlogPostTemplate,
+      //component: BlogPostTemplate,
+      component: `${BlogPostTemplate}?__contentFilePath=${post.node.internal.contentFilePath}`,
       context: {
+        id: post.node.id, // Added
         slug: post.node.frontmatter.slug,
         previous,
         next,
       },
     })
+    //})
 
     // generate post share images (dev only)
     if (process.env.gatsby_executing_command.includes('develop')) {
       createPage({
         path: `${post.node.frontmatter.slug}/image_share`,
-        component: BlogPostShareImage,
+        component: `${BlogPostShareImage}?__contentFilePath=${post.node.internal.contentFilePath}`,
         context: {
           slug: post.node.frontmatter.slug,
           width: 440,
           height: 220,
         },
       })
+      console.log(post.node.frontmatter.slug)
     }
   })
 
   // generate pages
+
   markdownFiles
-    .filter(item => item.node.fileAbsolutePath.includes('/content/pages/'))
+    //    .filter(item => item.node.fileAbsolutePath.includes('/content/pages/'))
+    .filter(item =>
+      item.node.internal.contentFilePath.includes('/content/pages/')
+    )
     .forEach(page => {
       createPage({
         path: page.node.frontmatter.slug,
-        component: PageTemplate,
+        component: `${PageTemplate}?__contentFilePath=${page.node.internal.contentFilePath}`, //
+        //component: PageTemplate, //}?__contentFilePath=${page.node.internal.contentFilePath}`, //
         context: {
           slug: page.node.frontmatter.slug,
         },
       })
+      console.log('page: ', page.node.frontmatter.slug)
     })
 
   // generate tag page
-  markdownFiles
+
+  const tags = tagsGroupQuery.data.tagsGroup.group
+
+  /* markdownFiles
     .filter(item => item.node.frontmatter.tags !== null)
     .reduce(
       (acc, cur) => [...new Set([...acc, ...cur.node.frontmatter.tags])],
       []
-    )
-    .forEach(uniqTag => {
-      createPage({
-        path: `tags/${uniqTag}`,
-        component: PostsBytagTemplate,
-        context: {
-          tag: uniqTag,
-        },
-      })
+    ) 
+  */
+  tags.forEach(uniqTag => {
+    createPage({
+      path: `tags/${uniqTag.fieldValue}`,
+      component: PostsBytagTemplate, //`${PostsBytagTemplate}?__tag=${uniqTag}`, //.node.internal.contentFilePath}`, //
+      context: {
+        tag: uniqTag.fieldValue,
+      },
     })
+    console.log(uniqTag)
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -152,6 +192,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+  }
+  if (node.internal.type === `Mdx`) {
+    createNodeField({
+      node,
+      name: `timeToRead`,
+      value: readingTime(node.body),
     })
   }
 }

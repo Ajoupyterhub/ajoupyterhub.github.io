@@ -78,14 +78,9 @@ const PrevNextPost = props => {
     <Fragment>
       <PreviewContainer>
         {articles.map((article, i) => {
-          const { excerpt, timeToRead } = article.node
-          const {
-            tags,
-            cover,
-            title,
-            slug,
-            language,
-          } = article.node.frontmatter
+          const { timeToRead } = article.node.fields
+          const { excerpt, tags, cover, title, slug, language } =
+            article.node.frontmatter
           const heroImg = (cover && cover.publicURL) || fluid.src
 
           return (
@@ -105,7 +100,7 @@ const PrevNextPost = props => {
                     <p>{excerpt}</p>
                   </section>
                   <footer>
-                    <ReadingTime min={timeToRead} />
+                    <ReadingTime min={timeToRead.text} />
                     {Array.isArray(tags) && (
                       <>
                         <Bull />

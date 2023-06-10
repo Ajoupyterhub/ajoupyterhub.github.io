@@ -19,7 +19,7 @@ class BlogList extends React.Component {
         <SEO />
         <Hero title={title} subTitle={description} />
 
-        <Wrapper>
+        <Wrapper role="main" id="main-content">
           <PostsList posts={posts} />
         </Wrapper>
 
@@ -43,9 +43,9 @@ export const pageQuery = graphql`
       }
     }
     posts: allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: {
-        fileAbsolutePath: { regex: "//content/posts//" }
+        internal: { contentFilePath: { regex: "//content/blog//" } }
         frontmatter: { published: { ne: false }, unlisted: { ne: true } }
       }
       limit: $limit
@@ -53,14 +53,18 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
-          timeToRead
+          fields {
+            timeToRead {
+              text
+            }
+          }
           frontmatter {
             title
             date
             tags
             language
             slug
+            excerpt
           }
         }
       }

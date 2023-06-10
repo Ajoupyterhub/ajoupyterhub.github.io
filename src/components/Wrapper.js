@@ -1,9 +1,15 @@
 import styled from 'styled-components'
+//import React from 'react';
+//import './wrapper.css';
 
-const Wrapper = styled.main.attrs(props => ({
-  role: !props.as ? 'main' : undefined,
-  id: !props.as ? 'main-content' : undefined,
-}))`
+/*
+// const Wrapper = styled.main.attrs(props => ({
+//   role: !props.as ? 'main' : undefined,
+//   id: !props.as ? 'main-content' : undefined,
+// 
+*/
+
+const Wrapper = styled.main`
   position: relative;
   border-radius: 5px;
   width: 80%;
@@ -20,5 +26,13 @@ const Wrapper = styled.main.attrs(props => ({
     padding: 25px;
   }
 `
+
+// const Wrapper = ({children, role, id}) => {
+//   return (
+//     <main className="wrapper" {...role} {...id}>
+//       {children}
+//     </main>
+//   )
+// }
 
 export default Wrapper

@@ -6,19 +6,22 @@ import Hero from '../components/Hero'
 import Article from '../components/Article'
 import PrevNextPost from '../components/PrevNextPost'
 import SEO from '../components/SEO'
-import Disqus from '../components/Disqus'
-import Utterances from '../components/Utterances'
+//import Disqus from '../components/Disqus'
+//import Utterances from '../components/Utterances'
+import Giscus from '../components/Giscus'
 
 class BlogPostTemplate extends React.Component {
   render() {
+    if (!this.props.data) return null
     const post = this.props.data.post
+    const children = this.props.children
     const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location}>
         <SEO
           title={post.frontmatter.title}
-          description={post.excerpt}
+          description={post.frontmatter.excerpt}
           cover={post.frontmatter.cover && post.frontmatter.cover.publicURL}
           imageShare={
             post.frontmatter.imageShare && post.frontmatter.imageShare.publicURL
@@ -34,16 +37,22 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
         />
 
-        <Wrapper>
-          <Article post={post} />
+        <Wrapper role="main" id="main-content">
+          <Article post={post} body={children} />
         </Wrapper>
+
         {/*
         <Wrapper as="aside">
           <Disqus slug={post.frontmatter.slug} title={post.frontmatter.title} />
         </Wrapper>
         */}
+        {/* 
         <Wrapper as="aside">
-          <Utterances /> {/* slug={post.frontmatter.slug} title={post.frontmatter.title} /> */}
+          <Utterances /> /// slug={post.frontmatter.slug} title={post.frontmatter.title} /> 
+        </Wrapper> */}
+
+        <Wrapper as="aside">
+          <Giscus slug={post.frontmatter.slug} title={post.frontmatter.title} />
         </Wrapper>
 
         <PrevNextPost previous={previous} next={next} />
@@ -57,7 +66,6 @@ export default BlogPostTemplate
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     post: mdx(frontmatter: { slug: { eq: $slug } }) {
-      excerpt
       body
       frontmatter {
         title
@@ -65,16 +73,12 @@ export const pageQuery = graphql`
         slug
         language
         tags
+        excerpt
         cover {
           publicURL
         }
         imageShare {
           publicURL
-        }
-        translations {
-          language
-          link
-          hreflang
         }
       }
     }

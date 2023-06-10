@@ -13,7 +13,7 @@ const Header = styled.header`
 
 class ContentIntro extends React.Component {
   render() {
-    const { date, tags, translations } = this.props
+    const { date, tags /* translations */ } = this.props
 
     return (
       <Header>
@@ -25,7 +25,7 @@ class ContentIntro extends React.Component {
           </Fragment>
         )}
 
-        {translations && <Translations translations={translations} />}
+        {/* translations && <Translations translations={translations} /> */}
       </Header>
     )
   }

@@ -48,7 +48,9 @@ const MagicScriptTag = () => {
 
   let calledFunction = `(${boundFn})()`
 
+  //Terser Error :
   calledFunction = Terser.minify(calledFunction).code
+  //console.log(calledFunction)
 
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
