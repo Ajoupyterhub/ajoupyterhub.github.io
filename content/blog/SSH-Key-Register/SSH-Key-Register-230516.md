@@ -32,6 +32,10 @@ VS Code의 Remote Development extention은 원격 개발에 필요한 여러 기
 
 `port forwarding`이 이루어지면, 여러분은 `http://localhost:[port 번호]/` 이런 방식으로 개발하고 있는 웹을 테스트 할 수 있습니다. (사용예: `http://localhost:3000/`)
 
+아래 그림은 `VS Code` 의 `Terminal` 창 에서 `container port`를 forwarding 하는 모습입니다. 
+ 
+![port-forwarding](./port-forwarding.png)
+
 `port forwarding`이란, 원격 서버의 `port`를 내 컴퓨터로 `tunneling`하는 방법입니다. 
 
 인터넷에 `ssh tunneling`을 검색하면, 자세한 내용이 많이 검색될 것입니다.
