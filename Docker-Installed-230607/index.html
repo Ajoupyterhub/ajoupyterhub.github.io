@@ -1,0 +1,224 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.10.0"/><meta data-react-helmet="true" name="description" content="Ajoupyterhub의 VS Code에서 docker 사용법을 실습할 수 있습니다."/><meta data-react-helmet="true" property="og:url" content="http://ajoupyterhub.ajousw.kr/Docker-Installed-230607"/><meta data-react-helmet="true" property="og:type" content="article"/><meta data-react-helmet="true" property="og:title" content="VS Code에 docker가 설치되었습니다. | Ajoupyterhub"/><meta data-react-helmet="true" property="og:description" content="Ajoupyterhub의 VS Code에서 docker 사용법을 실습할 수 있습니다."/><meta data-react-helmet="true" property="og:image" content="http://ajoupyterhub.ajousw.kr/static/a2f46e02ea8f7f8af6c6989687bd6b52/docker-cover.png"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:title" content="VS Code에 docker가 설치되었습니다. | Ajoupyterhub"/><meta data-react-helmet="true" name="twitter:description" content="Ajoupyterhub의 VS Code에서 docker 사용법을 실습할 수 있습니다."/><meta data-react-helmet="true" name="twitter:image" content="http://ajoupyterhub.ajousw.kr/static/a2f46e02ea8f7f8af6c6989687bd6b52/docker-cover.png"/><style data-href="/styles.5154cd3af15343e1472e.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{color:#d4d4d4;direction:ltr;font-family:Menlo,Monaco,Consolas,Andale Mono,Ubuntu Mono,Courier New,monospace;font-size:15px;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:none;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#264f78;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{background:#1e1e1e;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{background:#1e1e1e;border-radius:.3em;color:#db4c69;padding:.1em .3em}.namespace{opacity:.7}.token.doctype .token.doctype-tag{color:#569cd6}.token.doctype .token.name{color:#9cdcfe}.token.comment,.token.prolog{color:#6a9955}.language-html .language-css .token.punctuation,.language-html .language-javascript .token.punctuation,.token.punctuation{color:#d4d4d4}.token.boolean,.token.constant,.token.inserted,.token.number,.token.property,.token.symbol,.token.tag,.token.unit{color:#b5cea8}.token.attr-name,.token.builtin,.token.char,.token.deleted,.token.selector,.token.string{color:#ce9178}.language-css .token.string.url{text-decoration:underline}.token.entity,.token.operator{color:#d4d4d4}.token.operator.arrow{color:#569cd6}.token.atrule{color:#ce9178}.token.atrule .token.rule{color:#c586c0}.token.atrule .token.url{color:#9cdcfe}.token.atrule .token.url .token.function{color:#dcdcaa}.token.atrule .token.url .token.punctuation{color:#d4d4d4}.token.keyword{color:#569cd6}.token.keyword.control-flow,.token.keyword.module{color:#c586c0}.token.function,.token.function .token.maybe-class-name{color:#dcdcaa}.token.regex{color:#d16969}.token.important{color:#569cd6}.token.italic{font-style:italic}.token.constant{color:#9cdcfe}.token.class-name,.token.maybe-class-name{color:#4ec9b0}.token.console,.token.interpolation,.token.parameter{color:#9cdcfe}.token.boolean,.token.punctuation.interpolation-punctuation{color:#569cd6}.token.exports .token.maybe-class-name,.token.imports .token.maybe-class-name,.token.property,.token.variable{color:#9cdcfe}.token.escape,.token.selector{color:#d7ba7d}.token.tag{color:#569cd6}.token.cdata,.token.tag .token.punctuation{color:grey}.token.attr-name{color:#9cdcfe}.token.attr-value,.token.attr-value .token.punctuation{color:#ce9178}.token.attr-value .token.punctuation.attr-equals{color:#d4d4d4}.token.entity{color:#569cd6}.token.namespace{color:#4ec9b0}code[class*=language-javascript],code[class*=language-jsx],code[class*=language-tsx],code[class*=language-typescript],pre[class*=language-javascript],pre[class*=language-jsx],pre[class*=language-tsx],pre[class*=language-typescript]{color:#9cdcfe}code[class*=language-css],pre[class*=language-css]{color:#ce9178}code[class*=language-html],pre[class*=language-html]{color:#d4d4d4}.language-regex .token.anchor{color:#dcdcaa}.language-html .token.punctuation{color:grey}pre[class*=language-]>code[class*=language-]{position:relative;z-index:1}.line-highlight.line-highlight{background:#f7ebc6;box-shadow:inset 5px 0 0 #f7d87c;z-index:0}</style><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><style data-styled="" data-styled-version="5.3.10">.gRXCot{top:0;left:0;margin:0 auto;display:block;width:100%;z-index:1000;background-color:var(--color-primaryAlpha);font-weight:700;}/*!sc*/
+@media (min-width:700px){.gRXCot{position:fixed;}}/*!sc*/
+data-styled.g2[id="Header__HeaderWrapper-sc-yjybta-0"]{content:"gRXCot,"}/*!sc*/
+.ldYIzv{font-weight:700;margin-left:auto;margin-right:auto;height:60px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;max-width:770px;z-index:1000;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;overflow-x:auto;overflow-y:hidden;white-space:nowrap;padding:0px 10px;}/*!sc*/
+data-styled.g3[id="Header__HeaderNav-sc-yjybta-1"]{content:"ldYIzv,"}/*!sc*/
+.giHOYd{display:none;-webkit-box-align:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+@media (min-width:700px){.giHOYd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}/*!sc*/
+data-styled.g4[id="Header__HeaderLinksContainer-sc-yjybta-2"]{content:"giHOYd,"}/*!sc*/
+.gOUEjf{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:var(--color-white);border:0;margin:0;padding:8px 10px;min-width:42px;z-index:10;}/*!sc*/
+.Header__HeaderLink-sc-yjybta-3 + .Header__HeaderLink-sc-yjybta-3{margin-left:0.7rem;}/*!sc*/
+data-styled.g5[id="Header__HeaderLink-sc-yjybta-3"]{content:"gOUEjf,"}/*!sc*/
+.jwsShu{padding-left:0;}/*!sc*/
+data-styled.g6[id="Header__HeaderLinkTitle-sc-yjybta-4"]{content:"jwsShu,"}/*!sc*/
+.jxRvKc{display:block;padding-left:0;font-size:1.5em;}/*!sc*/
+data-styled.g7[id="Header__HeaderLinkTitleContent-sc-yjybta-5"]{content:"jxRvKc,"}/*!sc*/
+.fggRvx{padding:4px;height:57px;}/*!sc*/
+data-styled.g8[id="Header__HeaderImage-sc-yjybta-6"]{content:"fggRvx,"}/*!sc*/
+.eCpBVh{position:absolute;left:-999px;width:1px;height:1px;top:auto;color:var(--color-white);background-color:var(--color-grey700);}/*!sc*/
+.eCpBVh:focus{display:inline-block;height:auto;width:auto;position:static;padding:20px 10px;}/*!sc*/
+data-styled.g10[id="Header__SkipMainContent-sc-yjybta-8"]{content:"eCpBVh,"}/*!sc*/
+.dBcgqi{z-index:30;top:0px;position:relative;color:var(--color-white);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:transparent;border:none;cursor:pointer;padding:8px 12px;outline:none;-webkit-tap-highlight-color:transparent;}/*!sc*/
+@media (min-width:700px){.dBcgqi{display:none;}}/*!sc*/
+data-styled.g12[id="Header__BurgerButton-sc-yjybta-10"]{content:"dBcgqi,"}/*!sc*/
+.iujYVL{width:24px;top:30px;height:2px;background:var(--color-white);position:absolute;left:0;background:var(--color-white);-webkit-transition:all 250ms cubic-bezier(0.86,0,0.07,1);transition:all 250ms cubic-bezier(0.86,0,0.07,1);}/*!sc*/
+.iujYVL::before{content:'';top:-8px;width:24px;height:2px;background:var(--color-white);position:absolute;left:0;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);-webkit-transition:all 250ms cubic-bezier(0.86,0,0.07,1);transition:all 250ms cubic-bezier(0.86,0,0.07,1);}/*!sc*/
+.iujYVL::after{top:8px;content:'';width:24px;height:2px;background:white;position:absolute;left:0;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);-webkit-transition:all 250ms cubic-bezier(0.86,0,0.07,1);transition:all 250ms cubic-bezier(0.86,0,0.07,1);}/*!sc*/
+data-styled.g13[id="Header__BurgerContent-sc-yjybta-11"]{content:"iujYVL,"}/*!sc*/
+.dmprIo{text-align:left;padding-top:30px;padding-bottom:50px;background-color:var(--color-primary);color:var(--color-white);padding-left:20px;padding-right:20px;margin:0 auto;}/*!sc*/
+.dmprIo nav{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;max-width:900px;margin:0 auto;}/*!sc*/
+.dmprIo nav .footer-col{-webkit-flex:1 auto;-ms-flex:1 auto;flex:1 auto;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-right:1em;}/*!sc*/
+.dmprIo a{color:var(--color-white);font-weight:bold;}/*!sc*/
+.dmprIo a:hover{color:var(--color-grey200);}/*!sc*/
+.dmprIo .footer-col > p{margin:0;}/*!sc*/
+.dmprIo .footer-title{font-size:1.2rem;margin:0 0 1rem;}/*!sc*/
+.dmprIo .footer-item{color:var(--color-white);}/*!sc*/
+.dmprIo .footer-item a{padding:0.25rem 0;display:block;}/*!sc*/
+.dmprIo .footer-heart{color:var(--color-red);}/*!sc*/
+.dmprIo .footer-item-text{padding:0.1rem 0;color:var(--color-white);}/*!sc*/
+.dmprIo .footer-header{-webkit-order:1;-ms-flex-order:1;order:1;margin:0 0.25rem;margin-right:0.25rem;padding:0.25rem;}/*!sc*/
+.dmprIo .footer-column-items{grid-template-columns:1fr;display:grid;}/*!sc*/
+@media (max-width:564px){.dmprIo .footer-col:first-child{width:100%;}}/*!sc*/
+data-styled.g14[id="Footer__FooterWrapper-sc-1lmjllx-0"]{content:"dmprIo,"}/*!sc*/
+*{box-sizing:border-box;margin:0;padding:0;}/*!sc*/
+body{font-family:"Lato",sans-serif;color:var(--color-text);background-color:var(--color-siteBackground);}/*!sc*/
+img{max-width:100%;height:auto;vertical-align:middle;border:0;}/*!sc*/
+a{-webkit-text-decoration:none;text-decoration:none;color:var(--color-text);}/*!sc*/
+hr{border:0;border-top:1px solid var(--color-grey100);margin:50px 0 5px 0;}/*!sc*/
+ul,ol{padding-left:2em;margin:1em 0 0 0;}/*!sc*/
+*::selection{background-color:var(--color-secondary);}/*!sc*/
+data-styled.g15[id="sc-global-jPqRIU1"]{content:"sc-global-jPqRIU1,"}/*!sc*/
+.iFnGLJ{line-height:1.6;margin:1em 0 0 0;}/*!sc*/
+data-styled.g17[id="Commons__Text-sc-hngyue-1"]{content:"iFnGLJ,"}/*!sc*/
+.dFrSVj{display:inline-block;color:var(--color-textSecondary);margin:0 4px;}/*!sc*/
+.dFrSVj::before{content:'•';}/*!sc*/
+data-styled.g18[id="Commons__Bull-sc-hngyue-2"]{content:"dFrSVj,"}/*!sc*/
+.cKMwYw{text-transform:uppercase;color:var(--color-textSecondary);}/*!sc*/
+data-styled.g19[id="Commons__ReadingTimeContainer-sc-hngyue-3"]{content:"cKMwYw,"}/*!sc*/
+.kNHVKz{margin:0 0;}/*!sc*/
+@media (min-width:700px){.kNHVKz{margin:60px 0;}}/*!sc*/
+data-styled.g20[id="layout__SiteContent-sc-cq3p71-0"]{content:"kNHVKz,"}/*!sc*/
+.fmUxAp{position:relative;border-radius:5px;width:80%;max-width:770px;word-wrap:break-word;background-color:var(--color-wrapperBackground);margin:0px auto 30px auto;top:30px;padding:50px;box-shadow:0 0 0 0,0 6px 12px var(--color-wrapperShadow);}/*!sc*/
+@media (max-width:780px){.fmUxAp{width:100%;padding:25px;}}/*!sc*/
+data-styled.g21[id="Wrapper-sc-1uofgc1-0"]{content:"fmUxAp,"}/*!sc*/
+.cBbyxi{position:relative;display:table;width:100%;height:400px;overflow:hidden;background-repeat:no-repeat;background-position:center;background-size:cover;}/*!sc*/
+data-styled.g22[id="Hero__HeroContainer-sc-1ggftws-0"]{content:"cBbyxi,"}/*!sc*/
+.cntqoY{display:table-cell;vertical-align:middle;text-align:center;width:100%;}/*!sc*/
+data-styled.g23[id="Hero__TitleContainer-sc-1ggftws-1"]{content:"cntqoY,"}/*!sc*/
+.bMbQwP{font-weight:700;font-size:3rem;margin:10px 50px;color:var(--color-white);text-shadow:1px 1px 4px rgba(34,34,34,0.85);}/*!sc*/
+data-styled.g24[id="Hero__HeroTitle-sc-1ggftws-2"]{content:"bMbQwP,"}/*!sc*/
+.jfbihW .author-image{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;position:absolute;top:-40px;left:50%;margin-left:-40px;width:80px;height:80px;border-radius:100%;overflow:hidden;padding:6px;z-index:2;box-shadow:#ececec 0 0 0 1px;background-color:var(--color-wrapperBackground);}/*!sc*/
+.jfbihW .author-image .img{position:relative;display:block;width:100%;height:100%;background-size:cover;background-position:center center;border-radius:100%;}/*!sc*/
+.jfbihW .author-profile .author-image{position:relative;left:auto;top:auto;width:120px;height:120px;padding:3px;margin:-100px auto 0 auto;box-shadow:none;}/*!sc*/
+data-styled.g26[id="Bio__BioWrapper-sc-f12nua-0"]{content:"jfbihW,"}/*!sc*/
+.lfcyyM a{box-shadow:0 2px 0 0 var(--color-secondary);}/*!sc*/
+.lfcyyM a:hover{-webkit-filter:brightness(150%);filter:brightness(150%);box-shadow:none;}/*!sc*/
+data-styled.g27[id="Bio__BioText-sc-f12nua-1"]{content:"lfcyyM,"}/*!sc*/
+.iiVZrd{display:inline;color:var(--color-textSecondary);}/*!sc*/
+data-styled.g28[id="TagList__ListContainer-sc-1ev3s20-0"]{content:"iiVZrd,"}/*!sc*/
+.jaFNmt{text-transform:uppercase;color:var(--color-textSecondary);}/*!sc*/
+.jaFNmt:not(:first-child){margin-left:0.3rem;}/*!sc*/
+.jaFNmt:hover{border-bottom:1px dotted var(--color-textSecondary);}/*!sc*/
+.jaFNmt:before{content:'#';}/*!sc*/
+data-styled.g29[id="TagList__TagListItemLink-sc-1ev3s20-1"]{content:"jaFNmt,"}/*!sc*/
+.fMftwB{text-transform:uppercase;color:var(--color-textSecondary);}/*!sc*/
+.fMftwB:not(:first-child){margin-left:0.3rem;}/*!sc*/
+.fMftwB:before{content:'#';}/*!sc*/
+data-styled.g30[id="TagList__TagListItem-sc-1ev3s20-2"]{content:"fMftwB,"}/*!sc*/
+.KPKAr{color:var(--color-textSecondary);}/*!sc*/
+data-styled.g34[id="Time__TimeContainer-sc-fsq479-0"]{content:"KPKAr,"}/*!sc*/
+.bzVHRH{margin-bottom:2rem;color:var(--color-textSecondary);font-size:0.9em;}/*!sc*/
+data-styled.g35[id="ContentHeader__Header-sc-1mvu874-0"]{content:"bzVHRH,"}/*!sc*/
+.RPcPc{line-height:1.6;}/*!sc*/
+.RPcPc > h2{color:var(--color-h2);padding-top:3rem;margin-top:3rem;border-top:1px solid #ececec;}/*!sc*/
+.RPcPc > h3{padding-top:3rem;}/*!sc*/
+.RPcPc > p{margin:1em 0 0 0;}/*!sc*/
+.RPcPc a{fill:var(--color-text);box-shadow:0 2px 0 0 var(--color-secondary);}/*!sc*/
+.RPcPc a:hover{-webkit-filter:brightness(150%);filter:brightness(150%);box-shadow:none;}/*!sc*/
+.RPcPc a.anchor,.RPcPc a.gatsby-resp-image-link{box-shadow:none;}/*!sc*/
+.RPcPc h1 .anchor svg,.RPcPc h2 .anchor svg,.RPcPc h3 .anchor svg,.RPcPc h4 .anchor svg,.RPcPc h5 .anchor svg,.RPcPc h6 .anchor svg{visibility:hidden;margin-left:-16px;}/*!sc*/
+.RPcPc h1:hover .anchor svg,.RPcPc h2:hover .anchor svg,.RPcPc h3:hover .anchor svg,.RPcPc h4:hover .anchor svg,.RPcPc h5:hover .anchor svg,.RPcPc h6:hover .anchor svg,.RPcPc h1 .anchor:focus svg,.RPcPc h2 .anchor:focus svg,.RPcPc h3 .anchor:focus svg,.RPcPc h4 .anchor:focus svg,.RPcPc h5 .anchor:focus svg,.RPcPc h6 .anchor:focus svg{visibility:visible;}/*!sc*/
+.RPcPc > blockquote{box-sizing:border-box;background-color:var(--color-secondaryContentBackground);border-left:5px solid var(--color-secondary);margin:30px 0px;padding:5px 20px;border-radius:0 8px 8px 0;}/*!sc*/
+.RPcPc > blockquote p{margin:0.8em 0;font-style:italic;}/*!sc*/
+.RPcPc .gatsby-highlight{border-radius:5px;font-size:15px;line-height:1.7;border-radius:10px;overflow:auto;tab-size:1.5em;margin:1.5em -1.5em;}/*!sc*/
+@media (max-width:500px){.RPcPc .gatsby-highlight{border-radius:0;margin-left:-25px;margin-right:-25px;}}/*!sc*/
+.RPcPc .gatsby-highlight > pre{border:0;margin:0;padding:1;}/*!sc*/
+.RPcPc .gatsby-highlight pre[class*='language-']{float:left;min-width:100%;}/*!sc*/
+.RPcPc .gatsby-highlight-code-line{background-color:var(--color-darkBlue);display:block;margin-right:-1em;margin-left:-1em;padding-right:1em;padding-left:0.75em;border-left:0.25em solid var(--color-yellow);}/*!sc*/
+.RPcPc h1 > code.language-text,.RPcPc h2 > code.language-text,.RPcPc h3 > code.language-text,.RPcPc h4 > code.language-text,.RPcPc h5 > code.language-text,.RPcPc h6 > code.language-text,.RPcPc a > code.language-text,.RPcPc p > code.language-text,.RPcPc li > code.language-text,.RPcPc em > code.language-text,.RPcPc strong > code.language-text,.RPcPc span > code.language-text{font-family:'Roboto Mono' !important;background:var(--color-wrapperBackground);color:var(--color-text);padding:0 3px;font-size:0.94em;border-radius:0.3rem;word-wrap:break-word;}/*!sc*/
+.RPcPc code{word-wrap:break-word;}/*!sc*/
+.RPcPc table{margin:auto;margin-top:1em;margin-bottom:1em;border-collapse:collapse;overflow:hidden;}/*!sc*/
+.RPcPc table th,.RPcPc table td{padding:0.5em;background-color:var(--color-secondaryContentBackground);}/*!sc*/
+.RPcPc table tr{border-bottom:2px solid var(--color-white);}/*!sc*/
+.RPcPc table tbody tr:last-child{border-bottom:none;}/*!sc*/
+data-styled.g36[id="Content__ContentBody-sc-hjf6b6-0"]{content:"RPcPc,"}/*!sc*/
+.SBGEl{padding:0 30px 30px;}/*!sc*/
+@media only screen and (max-width:500px){.SBGEl{padding:0;}}/*!sc*/
+data-styled.g37[id="Article__ArticleWrapper-sc-1l54qvl-0"]{content:"SBGEl,"}/*!sc*/
+.eQofwi{position:relative;margin:6rem 0 0;padding:3rem 0 0;border-top:1px solid #ececec;}/*!sc*/
+data-styled.g38[id="Article__ArticleFooter-sc-1l54qvl-1"]{content:"eQofwi,"}/*!sc*/
+.cjVCVV{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:770px;width:80%;margin:0px auto 30px auto;top:20px;position:relative;}/*!sc*/
+@media (max-width:780px){.cjVCVV{width:100%;padding:25px;}}/*!sc*/
+data-styled.g40[id="PrevNextPost__PreviewContainer-sc-18rsw97-0"]{content:"cjVCVV,"}/*!sc*/
+.ensrNw{cursor:pointer;-webkit-flex:1 1 300px;-ms-flex:1 1 300px;flex:1 1 300px;background-color:var(--color-secondaryContentBackground);box-shadow:0 0 0 0,0 6px 12px rgba(0,0,0,0.1);margin:20px 20px;border-radius:5px;}/*!sc*/
+.ensrNw:hover{box-shadow:0 0 0 0,0 6px 12px var(--color-grey300);-webkit-transition:all 0.3s ease;transition:all 0.3s ease;-webkit-transform:translate3D(0,-1px,0);-ms-transform:translate3D(0,-1px,0);transform:translate3D(0,-1px,0);}/*!sc*/
+@media (min-width:780px){.ensrNw:first-child{margin-left:0;}.ensrNw:last-child{margin-right:0;}}/*!sc*/
+data-styled.g41[id="PrevNextPost__Preview-sc-18rsw97-1"]{content:"ensrNw,"}/*!sc*/
+.inUorT{width:auto;height:200px;background:#c5d2d9 no-repeat 50%;background-size:cover;border-radius:5px 5px 0 0;}/*!sc*/
+data-styled.g42[id="PrevNextPost__PreviewCover-sc-18rsw97-2"]{content:"inUorT,"}/*!sc*/
+.brxuuj{padding:20px;}/*!sc*/
+.brxuuj header{padding:0 0 10px 0;}/*!sc*/
+.brxuuj section{padding-bottom:10px;}/*!sc*/
+.brxuuj footer{font-size:0.8em;}/*!sc*/
+data-styled.g43[id="PrevNextPost__PreviewContent-sc-18rsw97-3"]{content:"brxuuj,"}/*!sc*/
+</style><title data-react-helmet="true">VS Code에 docker가 설치되었습니다. | Ajoupyterhub</title><link data-react-helmet="true" href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;display=swap" rel="stylesheet"/><link data-react-helmet="true" href="https://fonts.googleapis.com/css?family=Roboto Mono:400,700&amp;display=swap" rel="stylesheet"/><link data-react-helmet="true" rel="canonical" href="http://ajoupyterhub.ajousw.kr/Docker-Installed-230607"/><style>html { 
+--color-grey100: undefined;
+--color-grey200: undefined;
+--color-grey300: undefined;
+--color-grey400: undefined;
+--color-grey500: undefined;
+--color-grey600: undefined;
+--color-grey700: undefined;
+--color-grey800: undefined;
+--color-grey900: undefined;
+--color-white: undefined;
+--color-yellow: undefined;
+--color-lightYellow: undefined;
+--color-blueGreyed: undefined;
+--color-darkBlue: undefined;
+--color-beige: undefined;
+--color-red: undefined;
+--color-text: #3E4047;
+--color-textSecondary: #546c77;
+--color-siteBackground: #f4f8fb;
+--color-wrapperBackground: #ffffff;
+--color-secondaryContentBackground: #f7f7f7;
+--color-wrapperShadow: #0000001a;
+--color-primary: #3E4047;
+--color-primaryAlpha: rgba(32, 45, 42, 0.85);
+--color-secondary: #ffdc4e;
+--color-h2: #3E4047; }</style></head><body><script>!function(){const e=window.matchMedia("(prefers-color-scheme: dark)").matches,r=localStorage.getItem("color-mode");let t="light";t="string"==typeof r?r:e?"dark":"light";let f=document.documentElement;f.style.setProperty("--initial-color-mode",t),Object.entries({grey100:"#ECECED",grey200:"#CFCFD1",grey300:"#B2B3B5",grey400:"#78797E",grey500:"#3E4047",grey600:"#383A40",grey700:"#25262B",grey800:"#1C1D20",grey900:"#131315",white:"#ffffff",yellow:"#ffdc4e",lightYellow:"#f9e892",blueGreyed:"#546c77",darkBlue:"#022a4b",beige:"#fff9d9",red:"#ff0000",text:{light:"#3E4047",dark:"#ffffff"},textSecondary:{light:"#546c77",dark:"#c6d8e0"},siteBackground:{light:"#f4f8fb",dark:"#3E4047"},wrapperBackground:{light:"#ffffff",dark:"#3E4047"},secondaryContentBackground:{light:"#f7f7f7",dark:"#3a3a3a"},wrapperShadow:{light:"#0000001a",dark:"#00000000"},primary:{light:"#3E4047",dark:"#3E4047"},primaryAlpha:{light:"rgba(32, 45, 42, 0.85)",dark:"rgba(32, 45, 42, 0.85)"},secondary:{light:"#ffdc4e",dark:"#ffdc4e"},h2:{light:"#3E4047",dark:"#ffdc4e"}}).forEach(([e,r])=>{const a="--color-"+e;"object"==typeof r?f.style.setProperty(a,r[t]):f.style.setProperty(a,r)})}();</script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__HeaderWrapper-sc-yjybta-0 gRXCot"><nav class="Header__HeaderNav-sc-yjybta-1 ldYIzv"><a href="#main-content" class="Header__SkipMainContent-sc-yjybta-8 eCpBVh">Skip to main content</a><a aria-label="View home page" class="Header__HeaderLink-sc-yjybta-3 Header__HeaderLinkTitle-sc-yjybta-4 gOUEjf jwsShu" href="/"><img src="/static/bf03645fa9d2503b6fbc4f084cf7bf8a/79d08/intro_ajou_symbol.png" alt="Ajoupyterhub" class="Header__HeaderImage-sc-yjybta-6 fggRvx"/><span class="Header__HeaderLinkTitleContent-sc-yjybta-5 jxRvKc">Ajoupyterhub</span></a><div class="Header__HeaderLinksContainer-sc-yjybta-2 giHOYd"><a aria-label="View Blog page" class="Header__HeaderLink-sc-yjybta-3 gOUEjf" href="/">Blog</a><a aria-label="View About page" class="Header__HeaderLink-sc-yjybta-3 gOUEjf" href="/about/">About</a></div><button aria-label="open menu" class="Header__BurgerButton-sc-yjybta-10 dBcgqi"><div class="Header__BurgerContent-sc-yjybta-11 iujYVL"></div></button></nav></header><div class="layout__SiteContent-sc-cq3p71-0 kNHVKz"><div style="background-image:url(&quot;/static/a2f46e02ea8f7f8af6c6989687bd6b52/docker-cover.png&quot;)" class="Hero__HeroContainer-sc-1ggftws-0 cBbyxi"><div class="Hero__TitleContainer-sc-1ggftws-1 cntqoY"><h1 class="Hero__HeroTitle-sc-1ggftws-2 bMbQwP">VS Code에 docker가 설치되었습니다.</h1></div></div><main role="main" id="main-content" class="Wrapper-sc-1uofgc1-0 fmUxAp"><article class="Article__ArticleWrapper-sc-1l54qvl-0 SBGEl"><section><header class="ContentHeader__Header-sc-1mvu874-0 bzVHRH"><time class="Time__TimeContainer-sc-fsq479-0 KPKAr">7 June 2023</time><span class="Commons__Bull-sc-hngyue-2 dFrSVj"></span><div class="TagList__ListContainer-sc-1ev3s20-0 iiVZrd"><a class="TagList__TagListItemLink-sc-1ev3s20-1 jaFNmt" href="/tags/공지/">공지</a></div></header><div class="Content__ContentBody-sc-hjf6b6-0 RPcPc"><h3 id="docker-사용해보기" style="position:relative"><a href="#docker-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0" aria-label="docker 사용해보기 permalink" class="anchor before"><span><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></span></a>Docker 사용해보기</h3>
+<p><span><code class="language-text">VS Code</code></span> <span><code class="language-text">container</code></span>를 실행한 다음, <span><code class="language-text">Terminal</code></span>을 열고, <span><code class="language-text">command line</code></span>에서 <span><code class="language-text">docker</code></span> 명령을 호출합니다.</p>
+<span><div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> <span class="token function">ps</span>
+
+$ <span class="token function">docker</span> images</code></pre></div></span>
+<h3 id="주의-사항" style="position:relative"><a href="#%EC%A3%BC%EC%9D%98-%EC%82%AC%ED%95%AD" aria-label="주의 사항 permalink" class="anchor before"><span><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></span></a>주의 사항</h3>
+<p>실습 교육 목적으로 docker 기능을 설치했습니다.</p>
+<p>따라서, <span><code class="language-text">docker pull</code></span> 명령 등으로 다운받은 <span><code class="language-text">docker image</code></span>는 <span><code class="language-text">VS Code</code></span> 컨테이너가 종료되는 시점에 함께 삭제됩니다.</p>
+<p>스스로 만든 <span><code class="language-text">docker image</code></span>는 <span><code class="language-text">docker push</code></span> 명령으로 여러분의 docker registry 에 저장하거나, <span><code class="language-text">docker save</code></span> 명령으로 별도 <span><code class="language-text">tar</code></span> 파일에 저장해야 합니다.</p></div></section><footer class="Article__ArticleFooter-sc-1l54qvl-1 eQofwi"><div class="Bio__BioWrapper-sc-f12nua-0 jfbihW"><figure class="author-image"><div alt="Ajoupyterhub" style="background-image:url(&quot;/static/bf03645fa9d2503b6fbc4f084cf7bf8a/79d08/intro_ajou_symbol.png&quot;)" class="img"></div></figure><section><h4>About the author</h4><p class="Commons__Text-sc-hngyue-1 Bio__BioText-sc-f12nua-1 iFnGLJ lfcyyM">Ajoupyterhub team</p></section></div></footer></article></main><aside class="Wrapper-sc-1uofgc1-0 fmUxAp"></aside><aside class="PrevNextPost__PreviewContainer-sc-18rsw97-0 cjVCVV"><article class="PrevNextPost__Preview-sc-18rsw97-1 ensrNw"><a aria-label="View SSH Key 만들고, 등록하는 법 (feat. VS Code Remote Development) article" href="/SSH-Key-Register-230516/"><div style="background-image:url(&quot;/static/53f83881b78a7f4caa24d4096b01fadd/password-g746847c6a_1920.jpg&quot;)" class="PrevNextPost__PreviewCover-sc-18rsw97-2 inUorT"></div><div class="PrevNextPost__PreviewContent-sc-18rsw97-3 brxuuj"><header><h2>SSH Key 만들고, 등록하는 법 (feat. VS Code Remote Development)</h2></header><section><p>Ajoupyterhub에 SSH Key를 등록하여, VS Code로 원격 개발하는 방법을 알립니다.</p></section><footer><span class="Commons__ReadingTimeContainer-sc-hngyue-3 cKMwYw">8 min read<!-- --> </span><span class="Commons__Bull-sc-hngyue-2 dFrSVj"></span><div class="TagList__ListContainer-sc-1ev3s20-0 iiVZrd"><span to="/tags/사용가이드" class="TagList__TagListItem-sc-1ev3s20-2 fMftwB">사용가이드</span></div></footer></div></a></article></aside></div><footer class="Footer__FooterWrapper-sc-1lmjllx-0 dmprIo"><nav><div class="footer-col"><h3 class="footer-title">Ajoupyterhub<!-- --> © <!-- -->2023</h3><p class="footer-item-text">Built with<!-- --> <a class="footer-link" href="https://www.gatsbyjs.org">Gatsby</a>.</p><p class="footer-item-text">Theme using<!-- --> <a class="footer-link" href="https://github.com/maxpou/gatsby-starter-morning-dew">gatsby-starter-morning-dew</a>.</p><p class="footer-item-text">Hosted with<!-- --> <span class="footer-heart" role="img" aria-label="Love">❤</span> <!-- -->by<!-- --> <a class="footer-link" href="https://github.com">GitHub</a>.</p></div><div class="footer-col"><h3 class="footer-title">Explore</h3><div class="footer-column-items"><span class="footer-item"><a class="footer-link" href="/">Blog</a></span><span class="footer-item"><a class="footer-link" href="/about/">About</a></span></div></div><div class="footer-col"><h3 class="footer-title">둘러보기</h3><div class="footer-column-items"><span class="footer-item"><a class="footer-link" href="https://jupyter.ajou.ac.kr" rel="external">Ajoupyterhub</a></span><span class="footer-item"><a class="footer-link" href="https://www.maxpou.fr" rel="external">Blog Theme 제공하신 분</a></span></div></div></nav></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Docker-Installed-230607/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-389bcac2e031c658f75c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-3e223210d338d8920e4b.js\"],\"component---src-templates-blog-list-template-js\":[\"/component---src-templates-blog-list-template-js-ebf818bee41dbdac25b5.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-ajoupyterhub-renovation-ajoupyterhub-renovation-md\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-ajoupyterhub-renovation-ajoupyterhub-renovation-md-4c309a73ad1b9e1d57a0.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-docker-installed-docker-installed-md\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-docker-installed-docker-installed-md-d9259405a2634034eb3c.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-open-source-s-ws-for-ajoupyterhub-open-source-s-ws-for-ajoupyterhub-md\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-open-source-s-ws-for-ajoupyterhub-open-source-s-ws-for-ajoupyterhub-md-591cb43debdb0d2a4b39.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-ssh-key-register-ssh-key-register-230516-md\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-ssh-key-register-ssh-key-register-230516-md-5070e25a5c0505c68e7e.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-user-manual-2021-10-01-hello-from-ajoupyterhub-md\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-user-manual-2021-10-01-hello-from-ajoupyterhub-md-29c8525c6e897c775b6e.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-c-cpp-extension-installation-vs-code-c-cpp-extension-installation-md\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-c-cpp-extension-installation-vs-code-c-cpp-extension-installation-md-3b6dbf3e476ec4bbd510.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-python-use-guide-vs-code-python-use-guide-md\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-python-use-guide-vs-code-python-use-guide-md-76bece94703453f939d3.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-security-enhancement-vs-code-security-enhancement-md\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-security-enhancement-vs-code-security-enhancement-md-3c8acc6a7a2f3c29a632.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-web-deploy-test-vs-code-web-deploy-test-mdx\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-web-deploy-test-vs-code-web-deploy-test-mdx-1977306673a73399b84d.js\"],\"component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-welcome-2022-09-13-vs-code-welcome-mdx\":[\"/component---src-templates-blog-post-js-content-file-path-content-blog-vs-code-welcome-2022-09-13-vs-code-welcome-mdx-95a3beb3ab4a29df7b2d.js\"],\"component---src-templates-page-js-content-file-path-content-pages-about-about-mdx\":[\"/component---src-templates-page-js-content-file-path-content-pages-about-about-mdx-8ec47bb2ff21958739eb.js\"],\"component---src-templates-tags-js\":[\"/component---src-templates-tags-js-abd96ded63c0280895f1.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="45e7cd3b5538d37db679";</script><script src="/webpack-runtime-e80dd97b336c364e2c46.js" async></script><script src="/framework-29017ec1581cf19fa858.js" async></script><script src="/app-389bcac2e031c658f75c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
