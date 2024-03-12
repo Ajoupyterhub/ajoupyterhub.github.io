@@ -70,7 +70,12 @@ Key 파일에 대한 암호가 기억나지 않으면, 다시 만들어야겠죠
 <br/>
 
 1. `Windows OS`에서는 `cmd` 창을 열고, `MacOS` 에서는 `Terminal`을 엽니다.
-2. 커맨드 프롬프트에서 `ssh-keygen -t rsa`를 입력합니다.
+2. 커맨드 프롬프트에서 `ssh-keygen`를 입력합니다. 
+
+   보안 알고리즘이 강화된 `key`를 만들고 싶으면, `-t` 옵션을 사용합니다.
+   
+   예: `-t ed25519`. 사용할 수 있는 key 종류는 `ssh-keygen --help` 명령을 입력한 다음, `-t` 옵션으로 확인할 수 있습니다.  
+
 3. 만들어진 key 파일을 어디에 저장할 것인지를 묻는데, 그냥 `Enter` key를 누릅니다. 기본적으로 여러분의 사용자 폴더
   > - Windows : `C:\Users\<userid>`
   > - MacOS : `/Users/<userid>`
